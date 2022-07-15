@@ -674,7 +674,7 @@ impl<'a> GdbCommand<'a> {
             output.stdout.append(&mut output.stderr.clone());
             Ok(output.stdout)
         } else {
-            println!("{}", output.stdout);
+            println!("{:?}", output.stdout);
             Err(error::Error::ExitCode(output.status.code().unwrap()))
         }
     }
